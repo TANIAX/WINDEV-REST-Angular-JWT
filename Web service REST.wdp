@@ -1,0 +1,307 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : Web service REST
+ major_version : 26
+ minor_version : 0
+ type : 4097
+ description : ""
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : BgAAAAYAAAAJIMkqgBYxC9l4DdajO0BzmrqYovLFZhcybfZyZ7gRhmoVxz2AEgHAo/yNt0HPdwEhiBOr4Hp6KLkQYWZwQrc4EZy3qEqqMKdyvfCiBUkffJuIrA43JS40tlaniuQsqOe8Pesqidtb5bTt5RNEmC8OlS8HAO4n/dq11mNn+Ziys7TjnsinuHs4xhuz0kDh9bCoYzekLEcjqTSZ3YF1t8+U19aOcgL690cOSZ3cNgL/4s77iARCm2WCPCeFacT3IAO/QMkxs4hwm7CktLFAZ87ZAT70BHDZWCvuNIHbS7ezvulLZdpDfN7ZlG3OPrc4BGWMrOoCMET8Arts3VHLXw0AbSIakUVqKgLPNrF2FEMdl2Bvf0ubrKns60VtjTNBLlMexJEVbAkbj9SOhrXGJKEAWMe60rU/+LXk+xoeeAUNn80PMJkrtWfIdcY6uNjwy26/K4cuuVi/lDwRp/rvMd4U2YDrkiQRhmb1gj3Gu+cyxswmJI6fDRWFQAAvkmOOpTwuVJJD96CVlUsQKPOuC20Os5rH7oL9cETbDkG0I08HkSoTCI5mBJtuP/9+0wCvoBQXVdEoLDulzpbl8uVKbKDWHum83/QWoxs/lDqQi3SAeMS0bY8eVa6Cyf8DNG2Z4TecyRpL918UAFo3BvqUq99wNFgbKiCFwi9nq3emv4vsGgK0H/bjX29YtXAGjyeevcLzrIJGF5PHZV/QAz7m9vXZs5YlrN1yhJtEOkKqS7wGC2gskTe7bYKxSTQkedc1RSdnc2A5p/u2UbjUlaalL6+BzIc9k5OBI03wsUIykvqi3pbAqsT25D2F1KniyWMaRwlhr4LdyZV1vf7r+CDl5GG+SZQ0vk8Aw6i+YXU3sjp+7BIpjWaymcp2m3uzuKQ4cUYXPE2y+PGryP2E/HOkkEYq+DYeIDKncsf2GJ//j62Uojm/GuHF9v6M3gt0iE4PbyonsJlUuBQZYI+pZO8BAdt8hRWQbTpRTh2vFDN0o6Guau/P1eRFlcxADocwQ31Mg0Bc/Z1iGLSrdvVr2DKgh0sFn4oH4aPC4/VxozYmwZJSkChoqDsWs0sHXckHIGmkgaikDgOtOCWYoHs2kVvknmWPweIn3KTcj3jQPkHZsdldm0PaTPthH4Yqs6lkWipX4Hc6tKYAK2EElBtlxT4lvcJdGHg7XH+XQd4B4/6c9oLA5iUtTqF3XaiZARRuIpFlvdBzRLy/QLANT3xE1lb9F9LUXLGHCGm/++RFSMZD3IPTHTu+DFfqAjbOaAqZonIa9SnsclcMN0PQ7OzyQgzM9+gh9lFAbGmbQC0DNqPUGwDbjs+76Uskv1zK9JsNyajlHuNKQQax5AQdwQWQHMmHrjZq5R3BtXhKcnForqQ4ltBVbOXIcE6MIHUC26j0WXbyGN68n6/OrXVH/P6R03EHQrzTopuKrl8KhiWezPpLXwn4/wWo5MhOwiFfPl12Zy+lBlrJZCwDG4StbwePm3enZ5T7dVqnVf6RkEqcXriGXGirJDkao0DHK5yznD4LDzNiWK6oqlC5fKf0ybq6L0gNuSGdKgJITvxhXkhjBWldMe2ihM+2BvHwB56ahtzo4MxE84Us3wmrxAKmR7zRDNFsV4w8S3TihvDRLTPXnKojgcWIghTx/84j4v1bux8DJQvAB5j2fEo1jwYzRdISJJHjBVTmJcvxrxDe0PsHTpetOrtk6DcZvLqBTMQA9eFsirI0jwJfrbWXt/0A1KRwdpDtZTEIpGZQ2nODaaq0FyReS3bzcKJPckw6QQCGpjYFAphIr8fKA8KAh2NE85KTrHqQHDqsC5zD4P+RLYae85uWoSsGBQ==
+ configurations :
+  -
+    name : Webservice
+    internal_properties : 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
+    configuration_id : 7936305837031211959
+    type : 23
+    generation_name : RestTest.wdl
+    version : {}
+    language : 1
+    linux : true
+    64bits : true
+ elements :
+  identifier : 0x4066e66803b3121d
+  elements :
+   -
+     name : WebserviceREST
+     identifier : 0x4066e72403bcf148
+     internal_properties : BgAAAAYAAAATiJfB4o9HAgqZFGRcf8IR8ylKtAfP5X7D4PtTtNYkACdKeF0K1I3y/fIK
+     physical_name : .\WebserviceREST.wdrest
+     type : 28
+   -
+     name : MClient
+     identifier : 0x406dbcfb0225443d
+     internal_properties : BgAAAAYAAAAMCmSwjzR8r7RN0M8pR1H0lvXttQ50osaO26pQQNhErATeA7FnU3hMAT+5B49BOa8ZGQ==
+     physical_name : .\Sources\Classes\Fichier\MClient.wdc
+     type : 4
+   -
+     name : vmc_LoginForm
+     identifier : 0x406dbbf401df4460
+     internal_properties : BgAAAAYAAADUsjx4Rzx0d9ylp+x2D9XD8KMfx1R3IQ2nPpypONhEzCim2mpwkVOkqZcB/4d5AffBQQ==
+     physical_name : .\Sources\Classes\VueModèle\LoginForm.wdc
+     type : 4
+   -
+     name : cpToken
+     identifier : 0x406dbc0901e194a3
+     internal_properties : BgAAAAYAAADXsz9jQD11dt3WVVKtqBZzc8bCSo85mpS3OjfwdqroAMwwkfPj3vvRmpgC/oZ6BvrCQg==
+     physical_name : .\Sources\Procédures\Globales\cpToken.wdg
+     type : 7
+   -
+     name : cException
+     identifier : 0x406dbb2c01a73599
+     internal_properties : BgAAAAYAAABEwqyIN2xEZ0xV1/Sm964oNmUttYYR1pyy0hZBFOygoKCi21pI+YNUGQfxz1eJcWdR0Q==
+     physical_name : .\Sources\Classes\CustomException\cException.wdc
+     type : 4
+   -
+     name : CExceptionNotFound
+     identifier : 0x406dbb4901ada5c8
+     internal_properties : BgAAAAYAAABxzan9Snc/cEtQ4gA1DO2yG2RmpoUAqC2iVm8oL+G9W6kXk4IknYxfFAL8xEyEfGxU3A==
+     physical_name : .\Sources\Classes\CustomException\CExceptionNotFound.wdc
+     type : 4
+   -
+     name : cLoginErrorException
+     identifier : 0x406dbb5e01b3fa60
+     internal_properties : BgAAAAYAAAAcenSgH0Ts/0Rd7ya+S+OnBAdz6+gjTWiOW/npaLjcHOAucgi+Q4tcEQ+Jdz+xSb8JCQ==
+     physical_name : .\Sources\Classes\CustomException\cLoginErrorException.wdc
+     type : 4
+   -
+     name : cExceptionServeurInconue
+     identifier : 0x406dbb5001afc20a
+     internal_properties : BgAAAAYAAADQLggUk8hge9Cpa5yqI2eFhNeTO5hLyOS2edaNdIyIQMxS+NrQKQfYnZsF87Mt1cs1PQ==
+     physical_name : .\Sources\Classes\CustomException\cExceptionServeurInconue.wdc
+     type : 4
+   -
+     name : CExceptionTokenInvalide
+     identifier : 0x406dbb5701b1dd43
+     internal_properties : BgAAAAYAAACa8EJGZSKKla5zAX0c77J+EnNpseSf/D5KpCxyCxUH8csbyJUf2i3+9yWfGZlXI5V/hw==
+     physical_name : .\Sources\Classes\CustomException\CExceptionTokenInvalide.wdc
+     type : 4
+   -
+     name : cSupprimeClientCommand
+     identifier : 0x406dbb2101a50bab
+     internal_properties : BgAAAAYAAADNSSV5RjN7pI+UFqzpSB+dJaSMpAW+3L2k9ydTLvIYiHhIZZYIMcAT2EawCIh4APDYWA==
+     physical_name : .\Sources\Classes\Commands\Client\cSupprimeClientCommand.wdc
+     type : 4
+   -
+     name : vmc_JWTContent
+     identifier : 0x406dbbe501dd06ab
+     internal_properties : BgAAAAYAAADAvjhkQzhwq4CZG3mSec0UHF/bw3B7IZlOZ3BBoJCEZKgW9YFb7rcIzUu1A4N9BfvFTQ==
+     physical_name : .\Sources\Classes\VueModèle\vmc_JWTContent.wdc
+     type : 4
+   -
+     name : cExceptionHF
+     identifier : 0x406dbb3801a96312
+     internal_properties : BgAAAAYAAACvq4ebKFXdjlV+DKWLbt+0K4564scr+wqqgNmCRqrocExAkNPHMib58iCaZi6iXlK6ug==
+     physical_name : .\Sources\Classes\CustomException\cExceptionHF.wdc
+     type : 4
+   -
+     name : cExceptionMauvaisFormat
+     identifier : 0x406dbb4001ab8407
+     internal_properties : BgAAAAYAAACNieU5hvO75M/UVouxNh73k8Ziam+jo1y2UYqSpnoY0HyApd/ZIADTmIZwSMg4wDCYmA==
+     physical_name : .\Sources\Classes\CustomException\cExceptionMauvaisFormat.wdc
+     type : 4
+   -
+     name : vmc_ClientMinimaliste
+     identifier : 0x406dbbd601dbcea3
+     internal_properties : BgAAAAYAAADasIKGJWJKVW4zwTzc4X1UYF3f19769jqqMOmHY63n2S+DHDKoGe0+N+Xf2VmXY1W/Rw==
+     physical_name : .\Sources\Classes\VueModèle\vmc_ClientMinimaliste.wdc
+     type : 4
+   -
+     name : cObtientClientQuery
+     identifier : 0x406dbb7d01b7725f
+     internal_properties : BgAAAAYAAABTr4ufLBkRyuG6uL7/sJA/86AuRmlVO9qp8zBnYY8HGevllF5Wq1KlrmxWomKeWk62vg==
+     physical_name : .\Sources\Classes\Queries\Client\cObtientClientQuery.wdc
+     type : 4
+   -
+     name : cModifieClientCommand
+     identifier : 0x406dbb1901a3ecc9
+     internal_properties : BgAAAAYAAAAZdcHF4l/X2POISviNuiBvYW5k9Mdg1CmH0Qa+M83BB8kLvLD8xWS3vHpkXCTcpBT8BA==
+     physical_name : .\Sources\Classes\Commands\Client\cModifieClientCommand.wdc
+     type : 4
+   -
+     name : cAjoutClientCommand
+     identifier : 0x406dbb1001a1c972
+     internal_properties : BgAAAAYAAABNyaX5xrP7JA8UlhvxjAOa4YC4oAE19CqIWjumpkrIECjYVOXJMECTWMYwiAj4gHBY2A==
+     physical_name : .\Sources\Classes\Commands\Client\cAjoutClientCommand.wdc
+     type : 4
+   -
+     name : cObtientListeClientQuery
+     identifier : 0x406dbbbb01d9653b
+     internal_properties : BgAAAAYAAAAYdsDc65CYQxjh86cyBeiYaEkn/8LeWvm2eY6ZQf+Ve11FOiutHJ9wZdPNK+vlnRP9BQ==
+     physical_name : .\Sources\Classes\Queries\Client\cObtientListeClientQuery.wdc
+     type : 4
+   -
+     name : cMail
+     identifier : 0x406de1de02275ce9
+     internal_properties : BgAAAAYAAADxTSl9yve/8MvQCMVymiTjyeqUdEuMDvi1VAnYkY8P6RfFIspulDrflIJ8RMwE/OzUXA==
+     physical_name : .\Sources\Classes\Services\cMail.wdc
+     type : 4
+   -
+     name : CFichier
+     identifier : 0x406dbcf002231b39
+     internal_properties : BgAAAAYAAACqoJL2NXI6ZX4Dkvp3Y4TMNknVxerFhS+/0E4L+gaWQv4ceaJ8hjqOR/XvyUmHc2Wvtw==
+     physical_name : .\Sources\Classes\Fichier\CFichier.wdc
+     type : 4
+   -
+     name : cAjouteUtilisateurCommand
+     identifier : 0x406ebaa601c53034
+     internal_properties : BgAAAAYAAACNieU5hvO75M/VV+sr0ih+w4zOLi2/7gxWbS2D+xV5/wULa7UBAAbUmIZwSMg4wDCYmA==
+     physical_name : .\Sources\Classes\Commands\Utilisateur\cAjouteUtilisateurCommand.wdc
+     type : 4
+  other_elements : []
+  analysis : .\Web Service REST.ana\Web Service REST.wda
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ data_directory : <RepExeOuRepDonneesCommun>
+ common_generation_directory : true
+ languages :
+  - fr-FR
+ wb_style_sheet : .\RestTest.wws
+ code_elements :
+  type_code : 0
+  p_codes :
+   -
+     code : |1+
+      //	La partie front end se trouve sur à l’adresse https://github.com/Domino-informatique/angular 
+      // 	Login 	domino-informatique OU Gcornez@di-web.be
+      // 	MDP		Poulet1506
+      //	La présentation se trouve dans les sources du projet
+     type : 196608
+   -
+     type : 196621
+   -
+     type : 196627
+     enabled : false
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : RestTest
+rad :
+ internal_properties : BgAAAAYAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+ children :
+  -
+    explorer_type : classes
+    children :
+     -
+       name : VueModèle
+       explorer_type : custom_folder
+       children :
+        -
+          name : vmc_LoginForm
+          explorer_type : element
+          type : 4
+        -
+          name : vmc_JWTContent
+          explorer_type : element
+          type : 4
+        -
+          name : vmc_ClientMinimaliste
+          explorer_type : element
+          type : 4
+     -
+       name : CustomException
+       explorer_type : custom_folder
+       children :
+        -
+          name : CExceptionNotFound
+          explorer_type : element
+          type : 4
+        -
+          name : cException
+          explorer_type : element
+          type : 4
+        -
+          name : cLoginErrorException
+          explorer_type : element
+          type : 4
+        -
+          name : cExceptionServeurInconue
+          explorer_type : element
+          type : 4
+        -
+          name : CExceptionTokenInvalide
+          explorer_type : element
+          type : 4
+        -
+          name : cExceptionHF
+          explorer_type : element
+          type : 4
+        -
+          name : cExceptionMauvaisFormat
+          explorer_type : element
+          type : 4
+     -
+       name : Queries
+       explorer_type : custom_folder
+       children :
+        -
+          name : ClientQueries
+          explorer_type : custom_folder
+          children :
+           -
+             name : cObtientListeClientQuery
+             explorer_type : element
+             type : 4
+           -
+             name : cObtientClientQuery
+             explorer_type : element
+             type : 4
+     -
+       name : Commands
+       explorer_type : custom_folder
+       children :
+        -
+          name : ClientCommands
+          explorer_type : custom_folder
+          children :
+           -
+             name : cAjoutClientCommand
+             explorer_type : element
+             type : 4
+           -
+             name : cSupprimeClientCommand
+             explorer_type : element
+             type : 4
+           -
+             name : cModifieClientCommand
+             explorer_type : element
+             type : 4
+        -
+          name : UtilisateurCommands
+          explorer_type : custom_folder
+          children :
+           -
+             name : cAjouteUtilisateurCommand
+             explorer_type : element
+             type : 4
+     -
+       name : Fichier
+       explorer_type : custom_folder
+       children :
+        -
+          name : CFichier
+          explorer_type : element
+          type : 4
+        -
+          name : MClient
+          explorer_type : element
+          type : 4
+     -
+       name : Services
+       explorer_type : custom_folder
+       children :
+        -
+          name : cMail
+          explorer_type : element
+          type : 4
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==

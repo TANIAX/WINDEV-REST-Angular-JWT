@@ -1,0 +1,21 @@
+Web Service REST.wdd
+Sources\Classes\Fichier\MClient.wdc
+Sources\Classes\VueModèle\LoginForm.wdc
+Sources\Procédures\Globales\cpToken.wdg
+Sources\Classes\CustomException\cException.wdc
+Sources\Classes\CustomException\CExceptionNotFound.wdc
+Sources\Classes\CustomException\cLoginErrorException.wdc
+Sources\Classes\CustomException\cExceptionServeurInconue.wdc
+Sources\Classes\CustomException\CExceptionTokenInvalide.wdc
+Sources\Classes\Commands\Client\cSupprimeClientCommand.wdc
+Sources\Classes\VueModèle\vmc_JWTContent.wdc
+Sources\Classes\CustomException\cExceptionHF.wdc
+Sources\Classes\CustomException\cExceptionMauvaisFormat.wdc
+Sources\Classes\VueModèle\vmc_ClientMinimaliste.wdc
+Sources\Classes\Queries\Client\cObtientClientQuery.wdc
+Sources\Classes\Commands\Client\cModifieClientCommand.wdc
+Sources\Classes\Commands\Client\cAjoutClientCommand.wdc
+Sources\Classes\Queries\Client\cObtientListeClientQuery.wdc
+Sources\Classes\Services\cMail.wdc
+Sources\Classes\Fichier\CFichier.wdc
+Sources\Classes\Commands\Utilisateur\cAjouteUtilisateurCommand.wdc

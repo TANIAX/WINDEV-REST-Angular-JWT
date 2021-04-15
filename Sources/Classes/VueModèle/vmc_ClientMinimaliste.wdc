@@ -1,0 +1,308 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : vmc_ClientMinimaliste
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1068682b00ebfa5d
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      //Ces classes ont pour but d'envoyer aux consommateurs de l'API des objet JSON personnalisé 
+      //Notez que dans cet exemple, on ne donne pas aux consommateurs les données tels que le mot de passes ou la date de création.
+      
+      //Voir le dossier ClientQueries pour des exemples d'utilisation
+      vmc_ClientMinimaliste est une Classe
+      	m_UUIDClient	est UUID					<Serialise = "UUIDClient">
+      	m_eMail			est une chaîne ANSI	 		<Sérialise = "eMail">
+      	m_Civilité		est un entier sur 2 octets  <Sérialise = "Civilite">
+      	m_Nom			est une chaîne ANSI 		<Sérialise = "Nom">
+      	m_Prenom		est une chaîne ANSI 		<Sérialise = "Prenom">
+      	m_TelPortable	est une chaîne ANSI			<Sérialise = "TelPortable">
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1182309436093168221
+     type_code : 27
+     code : |1+
+      PROCEDURE Constructeur()
+      
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182309436093233757
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+      
+     type : 655360
+  properties :
+   -
+     name : Adresse
+     identifier : 0x106868e900f3dec8
+     type_code : 103
+     p_codes :
+      -
+        type : 1966080
+        enabled : false
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Nom
+     identifier : 0x106868f200f402ea
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Prénom
+     identifier : 0x106897710344a44a
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Prénom2
+     identifier : 0x1068690100f63dff
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Adresse1
+     identifier : 0x1068690800f75a32
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        type : 2031616
+        enabled : false
+     template_refs : []
+   -
+     name : AdresseSuite
+     identifier : 0x1068690f00f8753c
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : CodePostal
+     identifier : 0x1068691600f98ede
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Ville
+     identifier : 0x1068691d00faa9e8
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : EtatDep
+     identifier : 0x1068692300fbc436
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Pays
+     identifier : 0x1068692a00fcdccf
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Téléphone
+     identifier : 0x1068692f00fdf019
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Mobile
+     identifier : 0x1068693400fe0527
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Fax
+     identifier : 0x1068693a00ff1a74
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Email
+     identifier : 0x1068693e01002d51
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Photo
+     identifier : 0x1068694801015163
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : eMail1
+     identifier : 0x1068973f0341de89
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        type : 2031616
+        enabled : false
+     template_refs : []
+   -
+     name : Civilité
+     identifier : 0x106897440342f184
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+   -
+     name : Nom1
+     identifier : 0x10689749034306f1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         
+        type : 1966080
+      -
+        code : |1-
+         
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x1068680500e86447
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

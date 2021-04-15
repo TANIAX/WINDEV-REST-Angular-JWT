@@ -1,0 +1,331 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : CFichier
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x10685f5900a283bb
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      CFichier est une Classe
+      	protegee 
+      		m_sFichier 			est une chaîne
+      		m_sChampCléUnique 	est une chaine
+      	privee
+      		m_lAuthentifie 		est un booléen
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1182299738052199355
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(sFichier EST UNE CHAINE, sChampCléUnique est une chaine, lAuthentifie est un booléen = vrai)
+      :m_sFichier = sFichier
+      :m_sChampCléUnique = sChampCléUnique
+      :m_lAuthentifie = lAuthentifie //Authentification de base pour les tous les points d'entrées, mettre à faux si de base l'application ne nécessite pas d'authentification.
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182299738052264891
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+      
+     type : 655360
+   -
+     name : Authentification
+     procedure_id : 1182299738052395963
+     type_code : 12
+     code : |1-
+      PROCEDURE protegee GLOBALE Authentification() : booléen
+      
+      SI pValideToken() ALORS
+      	RENVOYER vrai
+      SINON
+      	RENVOYER faux
+      FIN
+     type : 458752
+   -
+     name : ChercheFichierEtExecuteAction
+     internal_properties : BgAAAAYAAABYA3VRhWOK0aCLH7ZuEG9qWoypHWU2mfWlA/6GyLLFYRnX9bDeNjKBQo05DIirCKt8XVG75zGTP5MbeOVWXpxv1nCWVim200XurUPOfCjDsGNYQPN6ZCgR/sAmMxNhExFBLBD8uSFTS7vTReQXmzzpTZj8aXbTd9Z3y0HXH/1Sb0rI
+     procedure_id : 1182299738052527035
+     type_code : 12
+     code : |1-
+      // Traitement automatique des exceptions :   exécuter le bloc de code CAS EXCEPTION:
+      PROCEDURE protegee  ChercheFichierEtExecuteAction(cléUnique, Action est procédure) : chaîne ANSI
+      
+      SI HLitRecherche(:m_sFichier, :m_sChampCléUnique, cléUnique, hIdentique)  ALORS
+      	// Réussite de la recherche, exécute l'action.
+      	RENVOYER Action()
+      SINON
+      	// Retourne un code HTTP 4xx : la source du problème est coté consommateur.
+      	oException est un CExceptionNotFound(cException::c_nCodeNotFound,:m_sFichier,cléUnique)
+      	RENVOYER ""
+      FIN
+      
+      CAS EXCEPTION:
+      	SI ExceptionInfo(errCode) = cException::c_nErreurCodeParamètreFonction ALORS
+      		oException est un CExceptionNotFound(cException::c_nCodeNotFound,:m_sFichier,cléUnique)
+      		RENVOYER ""
+      	FIN
+     type : 458752
+   -
+     name : FormatVersFichier
+     internal_properties : BgAAAAYAAABYA3VRhWOK0aCLH7ZuEG9qWoypHWU2mfWlA/6GyLLFYRnX9bDeNjKBQo05DIirCKt8XVG75zGTP5MbeOVWXpxv1nCWVim200XurUPOfCjDsGNYQPN6ZCgR/sAmMxNhExFBLBD8uSFTS7vTReQXmzzpTZj8aXbTd9Z3y0HXH/1Sb0rI
+     procedure_id : 1182299738052592571
+     type_code : 12
+     code : |1-
+      // Traitement automatique des exceptions :   exécuter le bloc de code CAS EXCEPTION:
+      PROCEDURE protegee FormatVersFichier() : booléen
+      
+      // Le contenu du POST/PUT est une chaîne contenant du JSON encodé en UTF-8.
+      ContenuEnregistrementEnJSON est une chaîne ANSI = WebserviceParamètre(paramBuffer)
+      
+      // Charge le contenu de l'enregistrement dans l'instance de la classe. Selon les cas on obtient :
+      // - En création : les valeurs par défaut de l'enregistrement.
+      // - En modification : les valeurs précédentes de l'enregistrement.
+      // On conserve ainsi la bonne valeur pour toutes les rubriques non exposées et pour toutes les rubriques non transmises par le consommateur.
+      objet:FichierVersMemoire()
+      
+      // Lecture et validation.
+      Désérialise(objet, ContenuEnregistrementEnJSON, psdJSON)
+      // ICI : Ajouter le code pour valider les données reçues.
+      
+      // Ecriture dans le fichier.
+      objet:MemoireVersFichier()
+      
+      RENVOYER Vrai
+      
+      CAS EXCEPTION:
+      	// Retourne un code HTTP 4xx : la source du problème est coté consommateur.
+      	oException est un cExceptionMauvaisFormat(cException::c_nCodeMauvaisFormatClient)
+      	RENVOYER ""
+     type : 458752
+   -
+     name : MemoireVersFichier
+     procedure_id : 1182299738052658107
+     type_code : 12
+     code : |1-
+      PROCEDURE protegee virtuelle MemoireVersFichier()
+      
+      WL.MémoireVersFichier(objet, MonFichierMappé)
+     type : 458752
+   -
+     name : FichierVersMemoire
+     procedure_id : 1182299738052723643
+     type_code : 12
+     code : |1+
+      PROCEDURE protegee virtuelle FichierVersMemoire()
+      WL.FichierVersMémoire(objet, MonFichierMappé)
+     type : 458752
+   -
+     name : Création
+     procedure_id : 1182299738052789179
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIC virtuelle Création() : chaîne ANSI
+      // Vérification si besoin de l'authentification.
+      SI :ObtientAuthentifie() _ET_ PAS Authentification() ALORS
+      	RENVOYER "" // Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      FIN
+      
+      HRAZ(:m_sFichier)
+      
+      // Transfère le contenu reçu dans le POST (il s'agit des rubriques au format JSON) dans l'enregistrement du fichier.
+      SI pas FormatVersFichier() ALORS
+      	// Problème de décodage.
+      	// Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      	RENVOYER ""
+      FIN
+      
+      SI HAjoute(:m_sFichier) ALORS
+      	// Réussite de l'ajout, retourne le contenu effectif de l'enregistrement (permet au consommateur du webservice de connaître un éventuel identifiant automatique).
+      	RENVOYER FichierVersFormat()
+      SINON
+      	// Retourne un code HTTP 5xx : la source du problème est coté serveur (et pas coté consommateur).
+      	oException est un cExceptionHF(cException::c_nCodeExceptionServeur,HErreurInfo(hErrMessage), HErreurInfo(hErrComplet))
+      	renvoyer ""
+      FIN
+     type : 458752
+   -
+     name : FichierVersFormat
+     internal_properties : BgAAAAYAAABYA3VRhWOK0aCLH7ZuEG9qWoypHWU2mfWlA/6GyLLFYRnX9bDeNjKBQo05DIirCKt8XVG75zGTP5MbeOVWXpxv1nCWVim200XurUPOfCjDsGNYQPN6ZCgR/sAmMxNhExFBLBD8uSFTS7vTReQXmzzpTZj8aXbTd9Z3y0HXH/1Sb0rI
+     procedure_id : 1182299738052854715
+     type_code : 12
+     code : |1-
+      PROCEDURE protegee FichierVersFormat() 
+      local
+      	ContenuEnregistrementEnJSON est une chaîne ANSI
+      	
+      objet:FichierVersMemoire()
+      
+      Sérialise(objet, ContenuEnregistrementEnJSON, psdJSON)
+      // On retourne directement une chaîne que le serveur d'application va considérer comme la réponse.
+      RENVOYER ContenuEnregistrementEnJSON
+      
+      
+      CAS EXCEPTION:
+      	// Retourne un code HTTP 5xx : la source du problème est coté serveur (et pas coté consommateur).
+      oException est un cExceptionMauvaisFormat(cException::c_nCodeMauvaisFormatServeur)
+      RENVOYER ""
+     type : 458752
+   -
+     name : Lecture
+     procedure_id : 1182299738052920251
+     type_code : 12
+     code : |1+
+      PROCEDURE PUBLIC VIRTUELLE Lecture(cléUnique) : chaîne ANSI
+      
+      // Vérification de l'authentification.
+      SI :ObtientAuthentifie() _ET_ PAS Authentification() ALORS
+      	RENVOYER "" // Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      FIN
+      
+      	PROCEDURE INTERNE Action()
+      		// Réussite de la recherche, retourne le contenu de l'enregistrement.
+      		RENVOYER FichierVersFormat()
+      	FIN
+      
+      // Recherche le fichier et exécute la procédure Action si le fichier est trouvé.
+      RENVOYER ChercheFichierEtExecuteAction(cléUnique,Action)
+     type : 458752
+   -
+     name : Modification
+     procedure_id : 1182299738052985787
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIC VIRTUELLE Modification(cléUnique) : chaîne ANSI
+      
+      // Vérification de l'authentification.
+      SI :ObtientAuthentifie() _ET_ PAS Authentification() ALORS
+      	RENVOYER "" // Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      FIN
+      
+      	PROCEDURE INTERNE Action() : chaîne ANSI
+      		// Réussite de la recherche : modification de l'enregistrement.
+      		// Transfère le contenu reçu dans le PUT (il s'agit des rubriques modifiées du fichier au format JSON) dans l'enregistrement du fichier.
+      		SI pas FormatVersFichier() ALORS
+      			// Problème de décodage.
+      			// Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      			RENVOYER ""
+      		FIN
+      	
+      		SI HModifie(:m_sFichier) ALORS
+      			// Réussite de la modification, retourne le contenu effectif de l'enregistrement.
+      			RENVOYER FichierVersFormat()
+      		SINON
+      			// Retourne un code HTTP 5xx : la source du problème est coté serveur (et pas coté consommateur).
+      			oException est un cExceptionHF(cException::c_nCodeExceptionServeur,HErreurInfo(hErrMessage), HErreurInfo(hErrComplet))
+      			RENVOYER ""
+      		FIN
+      	FIN
+      
+      // Recherche le fichier et exécute la procédure Action si le fichier est trouvé.
+      RENVOYER ChercheFichierEtExecuteAction(cléUnique,Action)
+     type : 458752
+   -
+     name : Suppression
+     internal_properties : BgAAAAYAAACpoFE/xlOdZ4D4pkD9cgRVY56WZdjzSMFApg2zUlFKXOn3vYETLFJmQsKco5GtUaUMSqSAcALwPsfh0Ipd41w6PXhDC1a1tJAjVX/CLe4XzVYX2GL8uxszqivWVOcx7OzBPAb0SodhNj6Alv52/LDwfLjq8Lij17zsEkj96xJr23e1tWxnkFlE+GZFXZybQ16PH8ljHvHtH2pJ4myXAMRuorvLVO96yjHEnG14FBILbMdR/MoBm4n/QlbpCfpdFjXxii7sjqBmUp2dONb09IEve6Op
+     procedure_id : 1182299738053051323
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIC virtuelle Suppression(cléUnique)
+      
+      // Vérification de l'authentification.
+      SI :ObtientAuthentifie() _ET_ PAS Authentification() ALORS
+      	RENVOYER "" // Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      FIN
+      
+      	PROCEDURE INTERNE Action() : chaîne ANSI
+      		// Réussite de la recherche : suppression de l'enregistrement.
+      		SI HSupprime(:m_sFichier) ALORS
+      		// Réussite de la suppression.
+      			RENVOYER ""
+      		SINON
+      			// Retourne un code HTTP 5xx : la source du problème est coté serveur (et pas coté consommateur).
+      			oException est un cExceptionHF(500,HErreurInfo(hErrMessage), HErreurInfo(hErrComplet))
+      			RENVOYER ""
+      		FIN
+      	FIN
+      
+      // Recherche le fichier et exécute la procédure Action si le fichier est trouvé.
+      renvoyer ChercheFichierEtExecuteAction(cléUnique,Action)
+     type : 458752
+   -
+     name : LectureTous
+     procedure_id : 1182299738053116859
+     type_code : 12
+     code : |1+
+      PROCEDURE public virtuelle LectureTous()
+      local
+      	ContenuEnregistrementEnJSON est une chaîne ANSI
+      	tabObj 						est un tableau de MClient
+      	obj 						est un objet dynamique 
+      	
+      // Vérification de l'authentification.
+      SI :ObtientAuthentifie() _ET_ pas Authentification() ALORS
+      	RENVOYER "" // Le code a rencontré en une erreur. Le code de traitement des erreurs fait un appel de WebserviceEcritCodeHTTP : le serveur d'application WEBDEV va ignorer la valeur de retour de la procédure.
+      FIN
+      
+      TableauSupprimeTout(tabObj)
+      
+      POUR TOUT MonFichierMappé
+      	:AllouerObjet(obj)
+      	objet:FichierVersMemoire()
+      	obj <= objet
+      	
+      	TableauAjoute(tabObj,obj)
+      	liberer(obj)
+      FIN
+      
+      Sérialise(tabObj, ContenuEnregistrementEnJSON, psdJSON)
+      // On retourne directement une chaîne que le serveur d'application va considérer comme la réponse.
+      RENVOYER ContenuEnregistrementEnJSON
+      
+     type : 458752
+   -
+     name : AllouerObjet
+     internal_properties : BgAAAAYAAABGIIC73N6wxu86Mjv1YCQCBPoHFcJwzZS1Y3Q9rN4h83NVckOEPHZMhJdxDarKzDN2bKnERtAp3AsfD8DQGot03QmSnnzCIW1tkEtUVDHBMdd4fjYEzOKEsYLAiEihW8IOb6NkFE2YxsfACk4q/LzpRc6Iyo4nZ4lnrsp/0Xz9VODJW9blTu9P6Sy3i3af480X4gpyubMu4sMsySw5Hir9qTTmlToztHdDBevGzcc+VtKdzIeWbyM+r8izJavzmz0L0GJOW0Lq1stJxQ==
+     procedure_id : 1182357866176580010
+     type_code : 12
+     code : |1+
+      PROCEDURE PROTÉGÉE virtuelle AllouerObjet(obj est un objet dynamique)
+      
+     type : 458752
+   -
+     name : ConstruitAuthentifie
+     procedure_id : 1184089403675162074
+     type_code : 12
+     code : |1+
+      PROCEDURE ConstruitAuthentifie(lValeur est un booléen)
+      :m_lAuthentifie = lValeur
+     type : 458752
+   -
+     name : ObtientAuthentifie
+     procedure_id : 1184089506754401272
+     type_code : 12
+     code : |1+
+      PROCEDURE ObtientAuthentifie() : booléen
+      renvoyer :m_lAuthentifie
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x1067593e01ceacf3
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

@@ -1,0 +1,170 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : MClient
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1068916b01551a2b
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1-
+      MClient est une Classe <mapping=Client>
+      	hérite de cfichier
+      
+      	// Le code se trouvant entre <MAPPING> et <FIN> est généré automatiquement.
+      	// Il sera effacé et recréé entièrement à chaque génération depuis le menu contextuel
+      	// du fichier dans l'explorateur de projet "..Regénérer la classe modèle".
+      	
+      	//On crée ici les point d'entrée du web Service en  procédure globale publique
+      	//Le point d'entrée ne crée que la classe exécutant la requête et renvoie immédiatement le résultat grasse à la méthode ObtientResultatRenvoi
+      	//Si c'est une méthode POST alors on créer l'objet dans le paramètre
+      	//Si c'est une méthode GET alors on créer l'objet dans un second temps et on lui envoi le paramètre à l'instanciation de l'objet.
+      	
+      	//Les méthodes influant sur l'écriture dans un fichier se trouve dans le dossier commands/{NomFichier+Commands}
+      	//La classe doit s'appeler {c+{Action}+{Fichier}+Command}
+      	
+      	//Les méthodes influant sur la lecture dans un fichier se trouve dans le dossier Queries/{NomFichier+Queries}
+      	//La classe doit s'appeler {c+{Action}+{Fichier}+Query}
+      	
+      	//Ces classes comporteront la logique de l'application.
+      	
+      	//Si une requête sur un point d'entrée de nécessite pas d'authentification
+      	//Il faut dans la classe comportant la logique de l'application appeler la méthode ConstruitAuthentifie(faux)
+      	//Exemple : AjoutUtilisateur
+      	
+      	//IMPORTANT
+      	//Dans le constructeur envoyez par paramètre le nom du fichier sur le quel vous travaillez ainsi que sa clé unique et si ce fichier nécessite une authentification
+      	<MAPPING><§rad:1§>
+      	m_UUIDClient	est UUID					<mapping=UUIDClient, clé unique	, Serialise="UUIDClient"><§rad:1§>
+      	m_eMail			est une chaîne ANSI			<mapping=eMail					, Serialise="eMail"><§rad:1§>
+      	m_MotDePasse	est une chaîne ANSI			<mapping=MotDePasse				, Serialise="MotDePasse"><§rad:1§>
+      	m_Civilité		est un entier sur 2 octets	<mapping=Civilité				, Serialise="Civilité"><§rad:1§>
+      	m_Nom			est une chaîne ANSI			<mapping=Nom					, Serialise="Nom"><§rad:1§>
+      	m_Prenom		est une chaîne ANSI			<mapping=Prenom					, Serialise="Prenom"><§rad:1§>
+      	m_TelFixe		est une chaîne ANSI			<mapping=TelFixe				, Serialise="TelFixe"><§rad:1§>
+      	m_TelPortable	est une chaîne ANSI			<mapping=TelPortable			, Serialise="TelPortable"><§rad:1§>
+      	m_DateCreation	est une dateheure			<mapping=DateCreation			, Serialise="DateCreation"><§rad:1§>
+      	<FIN><§rad:1§>
+      	<§rad:1§>
+      FIN<§rad:1§>
+      <§rad:1§>
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1182354790954703403
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(sFichier = "Client", sChampCléUnique est une chaine = "UUIDClient",lAuthentifie = vrai)
+      Ancêtre:constructeur(sFichier,sChampCléUnique,lAuthentifie)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182354790954768939
+     type_code : 28
+     code : |1-
+      PROCEDURE Destructeur()
+     type : 655360
+   -
+     name : MemoireVersFichier
+     internal_properties : BgAAAAYAAAA9LNLWqKA7Cj6aqH86+HC/iZkCogA+boiClSubsCxj8YIFA9c/kjBL60iRkNNvLws15hDsTGpcxde+KCBKxGjRqceg7gIxZKAvdS8uqVL3CRrnvLrAd6MzLsMW2PtdJEg1/KL07sPBzqoCdPy8qmKm+uJA7k4hkcZWNHazWQAlEWWvizqVroMOQlBba+ohFa+PGGBbmNrt83hi/djLcDRWkpu2vdRfYcsxcxHzh79+czxOIj/l6ORYp3jlLuf11mqE4jok0CbhQsnl5IVJOH+w/y89
+     procedure_id : 1182354795252883384
+     type_code : 12
+     code : |1-
+      PROCEDURE PRIVÉE virtuelle MemoireVersFichier()
+      local
+      	buffHashPass est un buffer
+      	
+      // ICI : Ajouter le code pour d'éventuelles transformations des valeurs.
+      si :m_MotDePasse <> "" ALORS
+      	:m_MotDePasse = HashChaîne(HA_MD5_128,:m_MotDePasse)
+      FIN
+      
+      WL.MémoireVersFichier(objet, MonFichierMappé)
+     type : 458752
+   -
+     name : FichierVersMemoire
+     procedure_id : 1182354795252949045
+     type_code : 12
+     code : |1-
+      PROCEDURE PRIVÉE VIRTUELLE FichierVersMemoire()
+      WL.FichierVersMémoire(objet, MonFichierMappé)
+      // ICI : Ajouter le code pour d'éventuelles transformations des valeurs.
+     type : 458752
+   -
+     name : LitTous
+     procedure_id : 1182355057264364853
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIQUE GLOBALE LitTous()
+      query est un cObtientListeClientQuery
+      renvoyer query:obtientValeurRenvoi()
+     type : 458752
+   -
+     name : AllouerObjet
+     procedure_id : 1182357947781304814
+     type_code : 12
+     code : |1-
+      PROCÉDURE PROTÉGÉE VIRTUELLE AllouerObjet(obj est un objet dynamique)
+      obj = allouer un MClient
+     type : 458752
+   -
+     name : Lit
+     procedure_id : 1182377455532417695
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIQUE GLOBALE Lit(sClé est une chaine)
+      query est un cObtientClientQuery(sClé)
+      RENVOYER query:obtientValeurRenvoi()
+     type : 458752
+   -
+     name : Ajout
+     procedure_id : 1182444577261164833
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIQUE GLOBALE Ajout(command est un cAjoutClientCommand)
+      renvoyer command:obtientValeurRenvoi()
+     type : 458752
+   -
+     name : Supprime
+     procedure_id : 1183738754175856673
+     type_code : 12
+     code : |1-
+      PROCEDURE PUBLIQUE GLOBALE Supprime(sClé est une chaine)
+      command est un cSupprimeClientCommand(sClé)
+      renvoyer command:ObtientValeurRenvoi()
+     type : 458752
+   -
+     name : Modifie
+     procedure_id : 1183739587399640123
+     type_code : 12
+     code : |1+
+      PROCEDURE PUBLIQUE GLOBALE Modifie(command est un cModifieClientCommand)
+      renvoyer command:ObtientValeurRenvoi()
+     type : 458752
+   -
+     name : AjoutUtilisateur
+     procedure_id : 1184092023605953784
+     type_code : 12
+     code : |1+
+      PROCEDURE PUBLIQUE GLOBALE AjoutUtilisateur(command est un cAjouteUtilisateurCommand)
+      renvoyer command:obtientvaleurrenvoi()
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x181202850006c2e1
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

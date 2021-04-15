@@ -1,0 +1,74 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cSupprimeClientCommand
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x106d7a2002e91f46
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1-
+      //Cette classe doit toujours comporter la méthode privée Handle et la méthode publique ObtientRésultatRenvoi
+      //La méthode obtientResultatRenvoi ne renvoi que le résultat de la méthode Handle 
+      
+      cSupprimeClientCommand est une Classe	
+      prive
+      	//Contenu attendu par dans le paramètre URL de la requête
+      	m_sClé est une chaine
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1183736554974748486
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(sClé est une chaine)
+      //Sauvegarde du paramètre de la requête
+      // ICI : Ajouter d'autres paramètre si besoin.
+      :m_sClé = sClé
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1183736554974814022
+     type_code : 28
+     code : |1-
+      PROCEDURE Destructeur()
+     type : 655360
+   -
+     name : Handle
+     procedure_id : 1183736619399403717
+     type_code : 12
+     code : |1-
+      PROCEDURE privee Handle()
+      LOCAL
+      	oClient est un MClient
+      	
+      renvoyer oClient:Suppression(:m_sClé)
+     type : 458752
+   -
+     name : ObtientValeurRenvoi
+     procedure_id : 1183737186335153565
+     type_code : 12
+     code : |1-
+      PROCEDURE publique ObtientValeurRenvoi()
+      RENVOYER :Handle()
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x106d7a1602e6f6de
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

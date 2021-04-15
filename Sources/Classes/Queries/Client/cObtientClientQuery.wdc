@@ -1,0 +1,98 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cObtientClientQuery
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x106897e603466dfe
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      //Cette classe doit toujours comporter la méthode privée Handle et la méthode publique ObtientRésultatRenvoi
+      //La méthode obtientResultatRenvoi ne renvoi que le résultat de la méthode Handle 
+      
+      cObtientClientQuery est une Classe
+      privé
+      	//Contenu attendu par dans le paramètre URL de la requête
+      	m_sClé		est une chaine
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1182361916338105854
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(sClé est une chaine)
+      :m_sClé = sClé
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182361916338171390
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+     type : 655360
+   -
+     name : Handle
+     procedure_id : 1182361916338236926
+     type_code : 12
+     code : |1-
+      PROCEDURE privee Handle()
+      local
+      	oClient 	est un MClient
+      	oClientMin 	est un vmc_ClientMinimaliste
+      	szJsonObj	est une chaine
+      
+      // /!\ On pourrait renvoyer directement oClient:Lecture(:m_sClé) mais le but ici étant de montrer comment utiliser une classe vue modèle nous ne le faisons pas.
+      // Une classe ou un objet vueModèle nous permet d'afficher ou nous des données n'existant pas dans le fichier de base ou simplement cacher des données (comme le mot de passe par exemple)
+      szJsonObj = oClient:Lecture(:m_sClé)
+      
+      //On vérifie si le JSON est initialisé car si il y a eu une erreur la désérialisation va planté.
+      //La désérialisation est utilisée ici afin de mapper notre objet de base avec notre objet vue modèle.
+      si szJsonObj <> "" ALORS
+      	Désérialise(oClientMin,szJsonObj,psdJSON)
+      	// ICI : Ajouter traitement personnalisé sur des propriété n'existant que dans notre objet vue modèle 
+      FIN
+      
+      renvoyer oClientMin
+     type : 458752
+   -
+     name : obtientValeurRenvoi
+     procedure_id : 1182361916338302462
+     type_code : 12
+     code : |1-
+      PROCEDURE obtientValeurRenvoi()
+      renvoyer :handle()
+     type : 458752
+  properties :
+   -
+     name : tabClient
+     identifier : 0x106897e603476dfe
+     type_code : 103
+     p_codes :
+      -
+        type : 1966080
+        enabled : false
+      -
+        type : 2031616
+        enabled : false
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x106897e7034c6e0e
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

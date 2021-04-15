@@ -1,0 +1,172 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : vmc_JWTContent
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1067bbc7007c93dc
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     internal_properties : BgAAAAYAAABjw/QraRVLBQuKoIzb6Q6n5o/1kEAsSdnu27T1Gq4j3R2uOs2d5kCtPU5mjN0D6ejUjUcpcCsL02BNidDKadLALKJmvlStJq4NODkZEnPrN5CwN6ZpCfrP6s4GD2UGV1MzYjwQLUxFO2D3RmsMl1hGxLt557u3On4DEB0HSAVs4weTdg26ObNQVXgOY+zgx4I/jf9zeSGQBTiPtEjWLf3B84ObPfcmR5rJhkq7MnRv0jVzwbCE
+     code : |1+
+      vmc_JWTContent est une Classe
+      privée	
+      	iss est une chaine
+      	sub est une chaîne
+      	aud est une chaîne
+      	exp est une chaîne
+      	nbf est une chaîne
+      	iat est une chaîne
+      	jti est une chaîne
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1182119890589160412
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(siss est une chaine = "" ,ssub est une chaine = "", saud est une chaine = "", sexp est une chaine = "", snbf est une chaine = "", siat est une chaine = "", sjti est une chaine = "")
+      :iss = siss
+      :sub = ssub
+      :aud = saud
+      :exp = sexp
+      :nbf = snbf
+      :iat = siat
+      :jti = sjti
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182119890589225948
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+      
+     type : 655360
+  properties :
+   -
+     name : aud
+     identifier : 0x1068a51a0368fead
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE aud() : chaîne
+         
+         RENVOYER aud
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE aud(Valeur est une chaîne)
+         
+         aud=Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : exp
+     identifier : 0x1068a52d0369480a
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE exp() : chaîne
+         
+         RENVOYER exp
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE exp(Valeur est une chaîne)
+         
+         exp=Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : sub
+     identifier : 0x1068a53a036a7d34
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE sub() : chaîne
+         
+         RENVOYER sub
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE sub(Valeur est une chaîne)
+         
+         sub=Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : nbf
+     identifier : 0x1068a564036c1ef2
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE nbf() : chaîne
+         
+         RENVOYER nbf
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE nbf(Valeur est une chaîne)
+         
+         nbf=Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : iat
+     identifier : 0x1068a56c036d40f1
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE iat() : chaîne
+         
+         RENVOYER iat
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE iat(Valeur est une chaîne)
+         
+         iat=Valeur
+        type : 2031616
+     template_refs : []
+   -
+     name : jti
+     identifier : 0x1068a572036e5822
+     type_code : 103
+     p_codes :
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE jti() : chaîne
+         
+         RENVOYER jti
+        type : 1966080
+      -
+        code : |1-
+         PROCEDURE PUBLIQUE jti(Valeur est une chaîne)
+         
+         jti=Valeur
+        type : 2031616
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x1067b9b9006f8b29
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

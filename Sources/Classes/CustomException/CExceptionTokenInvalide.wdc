@@ -1,0 +1,50 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : CExceptionTokenInvalide
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1067a6d20040b7af
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      CExceptionTokenInvalide est une Classe
+      	hérite de cException
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     internal_properties : BgAAAAYAAABval7WEqzhxTjyRIG28YXwRxDl6j48Pq0ErUpkU4WtDO9/RD9Y57V/tRJxBvvsY+OMjdpZ39+V3BS5GzGoF/B4t/mIHWfvz55QjacMdggF5+Dlwr+QwpQwUybh/jETvmtUD2Iz3UXZOaMDGjY7GdmVb4oX0FuaNAps5br3HCFWYEad9Pb0B3aUiqtnRwv40AvzUKfCtiBx4ZpdlaZqr6OVqyYp42HQFw4Cmi7kOvU2rSLVOCYJs5dyX3ZS+671pO5SQmBBkSjFM071ArrjbDhNSVro+Dw=
+     procedure_id : 1182096848085694383
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(nCode est un entier = 406, sMessage est une chaine = "Le jeton a expiré ou est invalide.", sMessageDetail est une chaine = "")
+      cException:constructeur(nCode,sMessage,sMessageDetail)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182096848085759919
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+      
+     type : 655360
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x1067a6d20043b7af
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

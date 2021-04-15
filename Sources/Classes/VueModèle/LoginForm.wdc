@@ -1,0 +1,92 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : vmc_LoginForm
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x106706ff01bc62e3
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      vmc_LoginForm est une Classe
+      	
+      	m_sLogin est une chaine
+      	m_sMotDePasse est une chaine	
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     procedure_id : 1181921119523791587
+     type_code : 27
+     code : |1+
+      PROCEDURE Constructeur(sLogin est une chaine = "", sMotDePasse est une chaine = "")
+      :m_sLogin = sLogin
+      :m_sMotDePasse = sMotDePasse
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1181921119523857123
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+     type : 655360
+   -
+     name : ObtientLogin
+     procedure_id : 1181977263337037100
+     type_code : 12
+     code : |1-
+      PROCEDURE ObtientLogin()
+      renvoyer :m_sLogin
+     type : 458752
+   -
+     name : ObtientMotDePasse
+     procedure_id : 1181977310581688309
+     type_code : 12
+     code : |1-
+      PROCEDURE ObtientMotDePasse()
+      renvoyer :m_sMotDePasse
+     type : 458752
+  properties :
+   -
+     name : sLogin
+     identifier : 0x106706ff01bd62e3
+     type_code : 103
+     p_codes :
+      -
+        type : 1966080
+        enabled : false
+      -
+        type : 2031616
+        enabled : false
+     template_refs : []
+   -
+     name : sMotDePasse
+     identifier : 0x106706ff01be62e3
+     type_code : 103
+     p_codes :
+      -
+        type : 1966080
+        enabled : false
+      -
+        type : 2031616
+        enabled : false
+     template_refs : []
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x106705fe01b47601
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

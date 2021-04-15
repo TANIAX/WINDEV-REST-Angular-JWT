@@ -1,0 +1,170 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cException
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x10679fd6002b6ea3
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      //Cette classe de base à pour but de pré construire les custom exception.
+      //Elle est toutefois utilisable si on l'appel en instanciant tout ses paramètres. 
+      
+      cException est une Classe 
+      	constante
+      	 // ICI : Ajouter d'autre erreur de base selon vos besoins.
+      	 c_sErreurServeurBase 			= "Erreur interne du serveur."
+      	 c_sErreurMauvaisFormatBase 	= "Format invalide."
+      	 
+      	 c_nErreurCodeParamètreFonction = 70500
+      	 
+      	 c_nCodeNotFound 				= 404
+      	 c_nCodeMauvaisFormatClient		= 422
+      	 c_nCodeMauvaisFormatServeur	= 500
+      	 c_nCodeExceptionServeur		= 500
+      	fin
+      	
+      	privée 
+      		m_nCode 		 est un entier
+      		m_sMessage 		 est une chaine
+      		m_sMessageDetail est une chaine
+      		m_sErreurRenvoi  est une chaine
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     internal_properties : BgAAAAYAAAC0S9mjMSnwGx0dMhW2COlZU4ofzHpGGKzHKk5q2m2SEsPkbC+NTTF3ah9QbQQ1jaY9quQj32YPXtQQ2AyE5NviupI6zRNLBg6kf7nNZMFTT6N89jXoFam7yphX63ol6jL9JC5X0yBxiwwgF/g5tRkpexZTogTN7Z14EPMDDH5P9pAaozFOb0KsC70qEmEdFLyvCR/q7oQ7CGviSOibImZ/dHONwrHlMfec6NpLrw==
+     procedure_id : 1182089168682774179
+     type_code : 27
+     code : |1+
+      PROCEDURE Constructeur(nCode est un entier = 0, sMessage est une chaine = "", sMessageDetail est une chaine = "")
+      :m_nCode 			= nCode
+      :m_sMessage 		= sMessage
+      :m_sMessageDetail 	= sMessageDetail
+      
+      :ConstruitMessageFormatté()
+      :httpEnvoieErreur()
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182089168682839715
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+      
+     type : 655360
+   -
+     name : ConstruitCode
+     procedure_id : 1182089761388398449
+     type_code : 12
+     code : |1+
+      PROCEDURE ConstruitCode(nCode est un entier)
+      :m_nCode = nCode
+     type : 458752
+   -
+     name : ObtientCode
+     procedure_id : 1182089881647576148
+     type_code : 12
+     code : |1+
+      PROCEDURE ObtientCode()
+      renvoyer :m_nCode
+     type : 458752
+   -
+     name : ConstruitMessage
+     procedure_id : 1182089971841910677
+     type_code : 12
+     code : |1+
+      PROCEDURE ConstruitMessage(sMessage est une chaine)
+      :m_sMessage = sMessage
+     type : 458752
+   -
+     name : ObtientMessage
+     procedure_id : 1182090079216183269
+     type_code : 12
+     code : |1+
+      PROCEDURE ObtientMessage()
+      renvoyer ::m_sMessage
+     type : 458752
+   -
+     name : ObtientMessageDetail
+     procedure_id : 1182302529781920295
+     type_code : 12
+     code : |1+
+      PROCEDURE ObtientMessageDetail()
+      renvoyer :m_sMessageDetail
+      
+     type : 458752
+   -
+     name : ConstruitMessageFormatté
+     procedure_id : 1182101057155082512
+     type_code : 12
+     code : |1-
+      PROCEDURE PRIVÉE ConstruitMessageFormatté()
+      local
+      	ContenuErreur est un variant
+      	
+      // Mémorise la source de l'erreur selon le code HTTP de l'erreur a renvoyer.
+      SELON :ObtientCode()
+      	CAS 400 <= * < 500
+      		ContenuErreur.fault.fault = "client"
+      	CAS 500 <= * < 600
+      		ContenuErreur.fault.fault = "serveur"
+      	AUTRES CAS 
+      		dbgAssertion(Faux)
+      		ContenuErreur.fault.fault = "serveur"
+      FIN
+      
+      // Mémorise le détail de l'erreur.
+      ContenuErreur.fault.faultcode = :ObtientCode()
+      ContenuErreur.fault.faultstring = :ObtientMessage()
+      ContenuErreur.fault.detail = :ObtientMessageDetail()
+      
+      :ConstruitErreurRenvoi(VariantVersJSON(ContenuErreur))
+     type : 458752
+   -
+     name : httpEnvoieErreur
+     internal_properties : BgAAAAYAAAC0S9mjMSnwGx0dMhW2COlZU4ofzHpGGKzHKk5q2m2SEsPkbC+NTTF3ah9QbQQ1jaY9quQj32YPXtQQ2AyE5NviupI6zRNLBg6kf7nNZMFTT6N89jXoFam7yphX63ol6jL9JC5X0yBxiwwgF/g5tRkpexZTogTN7Z14EPMDDH5P9pAaozFOb0KsC70qEmEdFLyvCR/q7oQ7CGviSOibImZ/dHONwrHlMfec6NpLrw==
+     procedure_id : 1182107808844195795
+     type_code : 12
+     code : |1+
+      PROCEDURE httpEnvoieErreur()
+      //Écrit le retour du web service.
+      WebserviceEcritTypeMIME("application/json")
+      WebserviceEcritCodeHTTP(:ObtientCode(),::ObtientErreurRenvoi())
+     type : 458752
+   -
+     name : ObtientErreurRenvoi
+     procedure_id : 1182302972163588747
+     type_code : 12
+     code : |1-
+      PROCEDURE  ObtientErreurRenvoi()
+      renvoyer :m_sErreurRenvoi
+     type : 458752
+   -
+     name : ConstruitErreurRenvoi
+     procedure_id : 1182303178322132944
+     type_code : 12
+     code : |1-
+      PROCEDURE ConstruitErreurRenvoi(sValeur est une chaine)
+      :m_sErreurRenvoi = sValeur
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x10679fc600253042
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "ea227cbc-accd-4b27-99f5-28b611fcfe8e",
+		"name": "Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetList",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyAiYWxnIjoiSFMyNTYiLCAidHlwIjoiSldUIiB9.eyAiaWF0IjoxNjE3Nzg1NTIzLCAiZXhwIjoxNjE3NzkyNzIzLCAibWVtYmVyX2lkIjowIH0.rKWcv8x_TZlLDx3y2RiqGKAwBboLq_gpF9HYj5OQ444",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/Client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetClient",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "AddClient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyAiYWxnIjoiSFMyNTYiLCAidHlwIjoiSldUIiB9.eyAiaWF0IjoxNjE3Nzg1NjYwLCAiZXhwIjoxNjE3NzkyODYwLCAibWVtYmVyX2lkIjowIH0.9diOmJ0NRFLi9FrKNlOOl-RNYzbN8mse9NlC2M-xrfM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"eMail\" : \"Guillaume.cornez@gmail.com\",\r\n    \"Civilité\" : 1,\r\n    \"Nom\" : \"Cornez\",\r\n    \"Prenom\" : \"Guillaume\",\r\n    \"TelFixe\" : \"/\",\r\n    \"TelPortable\" : \"+32497396646\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteClient",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyAiYWxnIjoiSFMyNTYiLCAidHlwIjoiSldUIiB9.eyAiaWF0IjoxNjE3Nzg1NjYwLCAiZXhwIjoxNjE3NzkyODYwLCAibWVtYmVyX2lkIjowIH0.9diOmJ0NRFLi9FrKNlOOl-RNYzbN8mse9NlC2M-xrfM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Client/06a3ffed-0af4-401b-9389-f4e87463e220",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Client",
+						"06a3ffed-0af4-401b-9389-f4e87463e220"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ModifyClient",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyAiYWxnIjoiSFMyNTYiLCAidHlwIjoiSldUIiB9.eyAiaWF0IjoxNjE3ODAyNzE2LCAiZXhwIjoxNjE3ODA5OTE2LCAibWVtYmVyX2lkIjowIH0.VOiulOeP2MHgA_7WyK_4__CWW7LaPBqd2okG039F7SE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"UUIDClient\" : \"96b50cf5-daca-411c-ac55-144109caebc5\",\r\n    \"eMail\" : \"Guillaume.cornez@gmail.com\",\r\n    \"Civilité\" : 1,\r\n    \"Nom\" : \"Cornez2\",\r\n    \"Prenom\" : \"Guillaume\",\r\n    \"TelFixe\" : \"/\",\r\n    \"TelPortable\" : \"+32497396646\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Client"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

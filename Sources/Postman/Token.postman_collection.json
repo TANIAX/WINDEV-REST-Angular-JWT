@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "d671a4cf-b510-4c04-affe-990d62e578ad",
+		"name": "Token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"m_sLogin\" : \"adelinelebegue@libertysurf.fr\",\r\n\t\"m_sMotDePasse\" : \"733bpbo3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		}
+	]
+}

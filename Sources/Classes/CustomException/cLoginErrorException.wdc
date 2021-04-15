@@ -1,0 +1,50 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : cLoginErrorException
+ major_version : 26
+ minor_version : 0
+ type : 4
+ description : ""
+ subtype : 0
+class :
+ identifier : 0x1067a25100361e6f
+ internal_properties : BgAAAAYAAAB2/vstTMCJbS/hlxjFxirSqKvCUuv8YxgpWyl7S3iA
+ code_elements :
+  type_code : 10
+  p_codes :
+   -
+     code : |1+
+      cLoginErrorException est une Classe
+      	hérite de cException
+      FIN
+     type : 131072
+  procedures :
+   -
+     name : Constructeur
+     internal_properties : BgAAAAYAAACZdEwoX46VZwqWcNvU1VUgaQTX9uzybn8KXbZyXUmZWHWfllOy2dldi3KRlCVcs6MaDfi54U29TqqZexM2y9RkwdVS8Z2BA2yW5X/GBOwNFyIR2A9mELyW0aZheL+XMscuK5zXK7+Ni7FrPX1MrgraMsPQr2wrs43rZDl2nb47Ian6Ic1F6GX/4XK+DjyV/TSqjZQlQx105Flc1OWrpGziFo+yWuqp3mnhmRmP5+5/emEW2VnmuBKBrtXpVvtGFVshl3UMti1Qto3kxX2o9anKM0za9jI=
+     procedure_id : 1182091895987707503
+     type_code : 27
+     code : |1-
+      PROCEDURE Constructeur(nCode est un entier = 401, sMessage est une chaine = "Nous sommes désolés mais nous ne sommes pas en mesure de vous authentifier avec les identifiants fournis", sMessageDetail est une chaine = "")
+      cException:constructeur(nCode,sMessage,sMessageDetail)
+     type : 589824
+   -
+     name : Destructeur
+     procedure_id : 1182091895987773039
+     type_code : 28
+     code : |1+
+      PROCEDURE Destructeur()
+      
+     type : 655360
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : BgAAAAYAAAA6ih3UbgNXHwTtiPSFUEj+2fi/m7v4QV2rqidAupM=
+  original_name : Classe1
+resources :
+ string_res :
+  identifier : 0x1067a23e0033d234
+  internal_properties : BgAAAAYAAAAnMYFQ1bL/vz9ehh7L22SNNSlIzGTOI8h5F/WtgDNP
+custom_note :
+ internal_properties : BgAAAAYAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

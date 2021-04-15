@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "5a9dcfc0-26f9-4663-afe9-f68fcd0ab245",
+		"name": "Utilisateur",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyAiYWxnIjoiSFMyNTYiLCAidHlwIjoiSldUIiB9.eyAiaWF0IjoxNjE3Nzg1NjYwLCAiZXhwIjoxNjE3NzkyODYwLCAibWVtYmVyX2lkIjowIH0.9diOmJ0NRFLi9FrKNlOOl-RNYzbN8mse9NlC2M-xrfM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"eMail\" : \"Gcornez@di-web.be\",\r\n    \"Civilité\" : 1,\r\n    \"Nom\" : \"Cornez\",\r\n    \"Prenom\" : \"Guillaume\",\r\n    \"TelFixe\" : \"/\",\r\n    \"TelPortable\" : \"+32497396646\",\r\n    \"MotDePasse\" : \"733bpbo3\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/Utilisateur",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"Utilisateur"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
