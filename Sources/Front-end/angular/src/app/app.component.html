@@ -1,0 +1,7 @@
+<app-header></app-header>
+<div [@triggerName]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</div>
+<app-footer></app-footer>
+
+

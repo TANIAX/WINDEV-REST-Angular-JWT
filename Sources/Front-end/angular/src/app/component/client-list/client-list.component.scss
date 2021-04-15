@@ -1,0 +1,36 @@
+.table {
+  width: 500px
+}
+table{
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.container{
+  flex-direction: column;
+}
+.action-button-div{
+  flex-direction: row;
+  justify-content: flex-end;
+  display: flex;
+  margin-top: 10px;
+}
+.action-button{
+  margin-left:20px;
+}
+#loading{
+  width: 140px;
+  height:100px;
+  text-align: left;
+  position: absolute;
+  top: calc(50vh - (/* height */100px / 2));
+  left: calc(50vw - (/* width */140px / 2)); 
+}

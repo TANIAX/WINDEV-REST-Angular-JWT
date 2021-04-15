@@ -1,0 +1,55 @@
+<div class="container">
+  <mat-card>
+    <!-- Title -->
+    <div class="title">
+      <i style="color:#ff4081;cursor: pointer;padding-bottom: 15px;" [routerLink]="['/Client']" class="fas fa-chevron-circle-left fa-2x" ></i>
+      <mat-card-title>Client</mat-card-title>
+      <mat-card-subtitle *ngIf="UUIDClient != 'Add'">identifiant : {{UUIDClient}}</mat-card-subtitle>
+    </div>
+    <hr>   
+    <!-- Input -->
+    <form [formGroup]="clientForm" (ngSubmit)="submit()">
+      <div class="input">
+
+        <div *ngIf="error" class="error">
+          <p>{{ error }}</p>
+          <span *ngIf="error" (click)="closeError()" class="material-icons cross-close">close</span>
+        </div>
+
+        <input hidden formControlName="Nom">
+
+        <mat-form-field appearance="fill">
+          <mat-label>eMail</mat-label>
+          <input matInput formControlName="eMail">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Select</mat-label>
+          <mat-select formControlName="Civilite">
+            <mat-option value="1">Monsieur</mat-option>
+            <mat-option value="2">Madame</mat-option>
+            <mat-option value="3">Mademoiselle</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Nom</mat-label>
+          <input matInput formControlName="Nom">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Prénom</mat-label>
+          <input matInput formControlName="Prenom">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Téléphone portable</mat-label>
+          <input matInput formControlName="TelPortable">
+        </mat-form-field>
+      </div>
+
+      <button [disabled]="!clientForm.valid" class="action-button" mat-raised-button
+        color="accent">{{labelActionButton}}</button>
+    </form>
+  </mat-card>
+</div>
